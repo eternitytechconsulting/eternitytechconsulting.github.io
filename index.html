@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eternity Tech Consulting — SAP BASIS consulting specialising in SAP HANA, S/4HANA administration, upgrades, monitoring and technical operations.">
+  <meta name="theme-color" content="#101d35">
+  <title>Eternity Tech Consulting | SAP BASIS Consultant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="#" onclick="showPage('home');return false;" aria-label="Eternity Tech Consulting home">
+      <img src="logo.png" alt="Eternity Tech Consulting logo" style="height:48px; width:auto;">
+      <span>ETERNITY <b>TECH</b><small>CONSULTING</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleMenu()">☰</button>
+    <nav class="tabs" id="mainNav" aria-label="Main navigation">
+      <button class="tab-btn active" data-page="home" onclick="showPage('home')">Home</button>
+      <button class="tab-btn" data-page="about" onclick="showPage('about')">About</button>
+      <button class="tab-btn" data-page="sop" onclick="showPage('sop')">SAP Library</button>
+      <button class="tab-btn" data-page="portfolio" onclick="showPage('portfolio')">Portfolio</button>
+      <button class="tab-btn" data-page="experience" onclick="showPage('experience')">Experience</button>
+      <button class="tab-btn" data-page="resume" onclick="showPage('resume')">Resume</button>
+      <button class="tab-btn" data-page="contact" onclick="showPage('contact')">Contact</button>
+      <button class="tab-btn premium" data-page="premium" onclick="showPage('premium')">Premium SOPs ↗</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section class="page show" id="home">
+    <div class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> SAP BASIS · HANA · S/4HANA</div>
+        <h1>Keeping SAP landscapes<br><span>stable, secure &amp; ready</span></h1>
+        <p class="hero-role">SAP BASIS Consultant | SAP HANA Administration | S/4HANA Technical Operations</p>
+        <p class="hero-intro">I work across SAP system administration, database operations, monitoring, troubleshooting and upgrade activities in on-premise and private-cloud environments.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="showPage('portfolio')">Explore my work <span>→</span></button>
+          <button class="btn btn-ghost" onclick="showPage('contact')">Let's connect</button>
+        </div>
+        <div class="hero-meta"><span>Based in India</span><i></i><span>Open to opportunities &amp; selected freelance work</span></div>
+      </div>
+      <div class="hero-visual" aria-label="SAP technical operations illustration">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="core-card"><div class="core-top"><span class="status-dot"></span> SYSTEM OVERVIEW <span class="live-label">LIVE CONCEPT</span></div>
+          <div class="core-logo">SAP<span> BASIS</span></div>
+          <div class="core-line"></div>
+          <div class="core-stats"><div><b>HANA</b><small>DATABASE</small></div><div><b>S/4</b><small>APPLICATION</small></div><div><b>OPS</b><small>MONITORING</small></div></div>
+          <div class="core-footer"><span>● SYSTEM OPERATIONS</span><span>TECHNICAL</span></div>
+        </div>
+        <span class="float-chip chip-a">HANA Administration</span><span class="float-chip chip-b">SUM Upgrade</span><span class="float-chip chip-c">Linux · Cloud</span>
+      </div>
+    </div>
+
+    <!-- SAP maintenance awareness panel inspired by the supplied reference image -->
+    <section class="eol-panel" aria-labelledby="eol-heading">
+      <div class="eol-topline"><span class="warning-icon">!</span><span>THE SAP MAINTENANCE MILESTONE</span><span class="eol-status">PLAN AHEAD</span></div>
+      <div class="eol-heading-row"><div><h2 id="eol-heading">Your SAP landscape needs a<br>clear maintenance roadmap.</h2>
+      <p>SAP Business Suite 7 core applications are scheduled to reach the end of mainstream maintenance on <strong>31 December 2027</strong>.</p></div>
+      <div class="countdown-wrap"><div class="countdown-label">TIME UNTIL 31 DECEMBER 2027</div><div class="countdown">
+        <div><strong id="days">—</strong><span>DAYS</span></div><div><strong id="hours">—</strong><span>HOURS</span></div><div><strong id="minutes">—</strong><span>MINS</span></div><div><strong id="seconds">—</strong><span>SECS</span></div>
+      </div></div></div>
+      <div class="eol-bottom"><div><b>AREAS TO REVIEW</b><p>Support strategy · Custom code · Add-ons · Integrations · Infrastructure</p></div>
+        <a href="https://support.sap.com/en/release-upgrade-maintenance/maintenance-information/maintenance-strategy/s4hana-business-suite7.html" target="_blank" rel="noopener">Read SAP's official maintenance guidance ↗</a></div>
+      <p class="eol-note">Important: This date applies to the SAP Business Suite 7 core applications covered by SAP's maintenance statement. Product, release, enhancement-package and contract conditions differ. Verify each system in SAP's official Product Availability Matrix and maintenance information.</p>
+    </section>
+
+    <section class="section-block">
+      <div class="section-heading"><div><span class="eyebrow dark-eyebrow">WHAT I WORK ON</span><h2>Technical capabilities</h2></div><p>Practical administration and support across the SAP technical stack.</p></div>
+      <div class="grid capability-grid">
+        <article class="card capability"><span class="card-icon">01</span><h3>SAP BASIS Administration</h3><p>System monitoring, user administration, transports, client administration, background jobs and technical troubleshooting.</p></article>
+        <article class="card capability"><span class="card-icon">02</span><h3>SAP HANA</h3><p>HANA database administration, health checks, performance review and System Replication activities.</p></article>
+        <article class="card capability"><span class="card-icon">03</span><h3>S/4HANA Upgrades</h3><p>Participation in upgrade activities using SUM, including technical preparation and upgrade-phase support.</p></article>
+        <article class="card capability"><span class="card-icon">04</span><h3>Infrastructure &amp; Linux</h3><p>Experience with SUSE Linux, VMware and Azure virtual machines, alongside on-premise environments.</p></article>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-heading"><div><span class="eyebrow dark-eyebrow">SELECTED WORK</span><h2>Project highlights</h2></div><button class="text-link" onclick="showPage('portfolio')">View portfolio →</button></div>
+      <div class="grid project-grid">
+        <article class="project-card"><span class="project-kicker">UPGRADE</span><h3>S/4HANA 1709 → 2025</h3><p>Upgrade activities for an Indian automotive manufacturing company, in collaboration with a Senior Consultant.</p><span class="project-foot">SAP S/4HANA · Cloud Private Edition</span></article>
+        <article class="project-card"><span class="project-kicker">DISASTER RECOVERY</span><h3>DR Application Build</h3><p>Built an SAP S/4HANA 2022 application on a DR site using an existing replicated HANA database.</p><span class="project-foot">S/4HANA · HANA Replication</span></article>
+        <article class="project-card"><span class="project-kicker">UPGRADE</span><h3>Nepal Business Group</h3><p>Contributed to an SAP S/4HANA upgrade engagement for a large private-sector business group in Nepal.</p><span class="project-foot">S/4HANA · Technical upgrade</span></article>
+      </div>
+    </section>
+    <section class="cta-strip"><div><span class="eyebrow">HAVE A PROJECT IN MIND?</span><h2>Let's discuss your SAP requirements.</h2><p>Connect for professional opportunities, technical discussions or selected freelance support.</p></div><button class="btn btn-light" onclick="showPage('contact')">Contact me →</button></section>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="page" id="about">
+    <div class="page-intro"><span class="eyebrow dark-eyebrow">A LITTLE ABOUT ME</span><h1>About <span class="blue-text">Kashif Raza</span></h1><p>SAP BASIS Consultant focused on reliable system operations, continuous learning and practical technical problem-solving.</p></div>
+    <div class="about-layout">
+      <div class="about-main card"><h2>My professional journey</h2>
+        <p>I am an SAP BASIS Consultant with around 3 years of overall professional experience, including hands-on SAP BASIS work across support, administration and upgrade-related activities.</p>
+        <p>My work has involved SAP ECC and S/4HANA environments, SAP HANA database administration, system monitoring, troubleshooting, Linux operations and coordination with functional, ABAP and infrastructure teams.</p>
+        <p>I have been involved in project activities such as S/4HANA upgrade engagements, disaster-recovery application builds and technical support across client landscapes. I value clear documentation, structured execution and learning from experienced team members.</p>
+        <h3>How I approach technical work</h3><ul class="check-list"><li>Understand the issue and its system impact before taking action.</li><li>Follow change procedures and document important steps.</li><li>Coordinate with application, database and infrastructure teams.</li><li>Keep learning through hands-on labs, SOPs and real project scenarios.</li></ul>
+      </div>
+      <aside class="about-side"><div class="card profile-card"><div class="profile-monogram">KR</div><h3>Kashif Raza</h3><p>SAP BASIS Consultant</p><div class="profile-rule"></div><div class="profile-detail"><span>Experience</span><b>~3 years overall</b></div><div class="profile-detail"><span>Base</span><b>India</b></div><div class="profile-detail"><span>Education</span><b>BCA</b></div><div class="profile-detail"><span>Work mode</span><b>On-site / Hybrid</b></div></div>
+        <div class="card about-focus"><span class="eyebrow dark-eyebrow">CURRENT FOCUS</span><h3>Growing deeper in SAP technology</h3><p>Building stronger practical skills in BASIS, HANA, S/4HANA technical operations, cloud infrastructure and upgrade methodologies.</p></div>
+      </aside>
+    </div>
+    <div class="section-block"><div class="section-heading"><div><span class="eyebrow dark-eyebrow">TECHNICAL TOOLKIT</span><h2>Skills &amp; technologies</h2></div></div>
+      <div class="skills-panel"><span>SAP BASIS</span><span>SAP HANA</span><span>S/4HANA</span><span>SAP ECC</span><span>SUM</span><span>STMS</span><span>Client Administration</span><span>HANA System Replication</span><span>SUSE Linux</span><span>VMware</span><span>Microsoft Azure VMs</span><span>Windows Server</span><span>DNS / DHCP / ADDS</span><span>Monitoring &amp; Troubleshooting</span></div>
+    </div>
+  </section>
+
+  <!-- SAP LIBRARY -->
+  <section class="page" id="sop">
+    <div class="page-intro"><span class="eyebrow dark-eyebrow">KNOWLEDGE SHARING</span><h1>SAP <span class="blue-text">Library</span></h1><p>Reference documents and practical notes for SAP BASIS and infrastructure learning.</p></div>
+    <div class="grid">
+      <article class="card library-card"><span class="tag free">FREE SOP</span><h3>HANA Database Installation</h3><p>Installation overview using SAP lifecycle management tools on a supported Linux environment.</p><a class="btn btn-primary small-btn" href="HANA%20DB%20Installation.pdf#toolbar=0&navpanes=0" target="_blank" rel="noopener">View SOP ↗</a></article>
+      <article class="card library-card"><span class="tag free">FREE SOP</span><h3>Application Server Installation &amp; Setup</h3><p>Reference guide for building an SAP application server on a supported Windows environment.</p><a class="btn btn-primary small-btn" href="Installation%20and%20Setup%20Application%20Server1.pdf#toolbar=0&navpanes=0" target="_blank" rel="noopener">View SOP ↗</a></article>
+      <article class="card library-card"><span class="tag soon">COMING SOON</span><h3>More technical SOPs</h3><p>Additional practical guides are being prepared for the library.</p><span class="muted-label">Coming soon</span></article>
+    </div>
+    <div class="library-note"><b>Learning note</b><p>Always validate commands, prerequisites and procedures against the relevant SAP documentation, release and system landscape before applying them in production.</p></div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="page" id="portfolio">
+    <div class="page-intro"><span class="eyebrow dark-eyebrow">SELECTED ENGAGEMENTS</span><h1>Project <span class="blue-text">Portfolio</span></h1><p>A selection of SAP technical project activities and environments I have contributed to.</p></div>
+    <div class="grid">
+      <article class="card portfolio-card"><span class="project-kicker">01 / UPGRADE</span><h3>S/4HANA Upgrade — Business Group</h3><p>Contributed to an SAP S/4HANA upgrade engagement for one of Nepal's large private-sector business groups.</p><div class="skill-tags"><span>S/4HANA</span><span>SUM</span><span>Upgrade support</span></div></article>
+      <article class="card portfolio-card"><span class="project-kicker">02 / UPGRADE</span><h3>Automotive Manufacturer</h3><p>Worked with a Senior Consultant on the upgrade from SAP S/4HANA 1709 to SAP S/4HANA 2025 Cloud Private Edition.</p><div class="skill-tags"><span>S/4HANA 2025</span><span>SUM</span><span>Private Cloud</span></div></article>
+      <article class="card portfolio-card"><span class="project-kicker">03 / DISASTER RECOVERY</span><h3>DR Application Build</h3><p>Built an SAP S/4HANA 2022 application on a DR site using an existing replicated HANA database.</p><div class="skill-tags"><span>S/4HANA 2022</span><span>HANA</span><span>DR</span></div></article>
+      <article class="card portfolio-card"><span class="project-kicker">04 / DATABASE</span><h3>Secondary HANA Database Build</h3><p>Contributed to a secondary-site SAP HANA database deployment for a healthcare client.</p><div class="skill-tags"><span>SAP HANA</span><span>Database</span><span>Secondary site</span></div></article>
+    </div>
+    <p class="disclaimer">Project descriptions are intentionally high-level and omit confidential client, system and infrastructure details.</p>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="page" id="experience">
+    <div class="page-intro"><span class="eyebrow dark-eyebrow">CAREER HISTORY</span><h1>Experience &amp; <span class="blue-text">Learning</span></h1><p>Professional experience across SAP technical operations and infrastructure support.</p></div>
+    <div class="timeline">
+      <article class="timeline-item"><span class="timeline-date">DEC 2025 — PRESENT</span><h3>SAP BASIS Consultant</h3><h4>Excelligent Consulting Services</h4><ul><li>Working on SAP system administration across ECC and S/4HANA landscapes.</li><li>Supporting technical troubleshooting with functional, ABAP and infrastructure teams.</li><li>Monitoring system health, background jobs, work processes and HANA database performance.</li><li>Involved in SAP S/4HANA 2025 on-premise upgrade activities using SUM.</li></ul></article>
+      <article class="timeline-item"><span class="timeline-date">NOV 2023 — DEC 2025</span><h3>Associate SAP BASIS</h3><h4>Progression Infonet Pvt. Ltd.</h4><ul><li>Supported SAP technical administration and day-to-day system operations.</li><li>Handled system analysis, monitoring, upgrade-related tasks and user administration.</li><li>Worked on SAP landscape administration and technical support activities.</li></ul></article>
+      <article class="timeline-item"><span class="timeline-date">EDUCATION</span><h3>Bachelor of Computer Applications (BCA)</h3><h4>Academic background</h4><p>Computer applications foundation supporting continued learning in enterprise technology and SAP administration.</p></article>
+    </div>
+    <div class="library-note"><b>Certifications</b><p>Certifications can be added here once the certification name, issuing organisation and year are confirmed.</p></div>
+  </section>
+
+  <!-- RESUME -->
+  <section class="page" id="resume">
+    <div class="page-intro"><span class="eyebrow dark-eyebrow">CAREER PROFILE</span><h1>My <span class="blue-text">Resume</span></h1><p>Download or view my latest professional profile.</p></div>
+    <div class="resume-panel"><div class="resume-icon">PDF</div><div><h2>Kashif Raza — SAP BASIS Consultant</h2><p>Experience, technical skills, project exposure and contact details.</p><a class="btn btn-primary" href="resume.pdf" download>Download Resume ↓</a></div></div>
+    <iframe class="resume-frame" src="resume.pdf" title="Kashif Raza Resume"><p>Your browser cannot display the PDF. <a href="resume.pdf">Open the resume</a>.</p></iframe>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="page" id="contact">
+    <div class="page-intro"><span class="eyebrow dark-eyebrow">GET IN TOUCH</span><h1>Let's <span class="blue-text">connect</span></h1><p>For SAP BASIS opportunities, technical discussions and selected freelance requests.</p></div>
+    <div class="contact-layout"><div class="contact-main card"><h2>Contact details</h2>
+      <div class="contact-row"><span class="contact-symbol">✉</span><div><small>EMAIL</small><a href="mailto:kashifmpu@gmail.com">kashifmpu@gmail.com</a></div></div>
+      <div class="contact-row"><span class="contact-symbol">☎</span><div><small>PHONE / WHATSAPP</small><a href="tel:+916205087590">+91 62050 87590</a><a class="sub-link" href="https://wa.me/916205087590" target="_blank" rel="noopener">Message on WhatsApp ↗</a></div></div>
+      <div class="contact-row"><span class="contact-symbol">⌖</span><div><small>LOCATION</small><b>India · Originally from Bokaro, Jharkhand</b></div></div>
+      <div class="contact-row"><span class="contact-symbol">in</span><div><small>LINKEDIN</small><a href="https://linkedin.com/in/technical4you" target="_blank" rel="noopener">linkedin.com/in/technical4you ↗</a></div></div>
+    </div><div class="contact-aside"><div class="contact-callout"><span class="eyebrow">OPEN TO DISCUSSION</span><h2>Have an SAP requirement?</h2><p>Reach out to discuss a role, project requirement or technical collaboration.</p><a class="btn btn-light" href="mailto:kashifmpu@gmail.com?subject=SAP%20BASIS%20Opportunity">Send an email →</a></div><p class="disclaimer">For freelance work, please share the system scope, SAP version, expected support window and project timeline in your message.</p></div></div>
+  </section>
+
+  <!-- PREMIUM -->
+  <section class="page" id="premium">
+    <div class="page-intro"><span class="eyebrow dark-eyebrow">DETAILED DOCUMENTATION</span><h1>Premium <span class="blue-text">SOP Library</span></h1><p>Structured technical runbooks and checklists. Request details by email.</p></div>
+    <div class="grid">
+      <article class="card premium-card"><span class="tag paid">PREMIUM SOP</span><h3>S/4HANA Upgrade Runbook</h3><p>Technical runbook for an SAP S/4HANA 2025 upgrade using Software Update Manager (SUM), from a BASIS administration perspective.</p><button class="btn btn-gold" onclick="toggleDetails(this)">View details +</button><div class="details"><p><b>Document length:</b> 43 pages</p><p>Includes a structured overview of upgrade activities and technical considerations.</p><a class="btn btn-primary small-btn" href="mailto:kashifmpu@gmail.com?subject=Request%20for%20S4HANA%20Upgrade%20Runbook">Request this SOP →</a></div></article>
+      <article class="card premium-card"><span class="tag paid">PREMIUM SOP</span><h3>SAP BASIS Daily Health Check Pack</h3><p>Standardised daily checklist for reviewing SAP system availability, performance, data integrity and technical operations.</p><button class="btn btn-gold" onclick="toggleDetails(this)">View details +</button><div class="details"><p><b>Document length:</b> 12 pages</p><p>Designed as a repeatable reference for daily BASIS monitoring and health checks.</p><a class="btn btn-primary small-btn" href="mailto:kashifmpu@gmail.com?subject=Request%20for%20SAP%20BASIS%20Health%20Check%20Pack">Request this SOP →</a></div></article>
+      <article class="card premium-card"><span class="tag paid">PREMIUM SOP</span><h3>Virtual Machine Creation on Microsoft Azure</h3><p>Step-by-step guide to creating an Azure virtual machine for SAP HANA database and application-server practice environments.</p><button class="btn btn-gold" onclick="toggleDetails(this)">View details +</button><div class="details"><p><b>Document length:</b> 10 pages</p><p>Introduces the VM setup process for a hands-on SAP learning environment.</p><a class="btn btn-primary small-btn" href="mailto:kashifmpu@gmail.com?subject=Request%20for%20Azure%20VM%20SOP">Request this SOP →</a></div></article>
+    </div>
+    <p class="disclaimer">SOPs are learning and reference materials. Always check current SAP documentation and your organisation's approved change process before executing technical procedures.</p>
+  </section>
+</main>
+
+<footer><div class="footer-inner"><a class="footer-brand" href="#" onclick="showPage('home');return false;">KASHIF RAZA</a><p>SAP BASIS · HANA · S/4HANA</p><div class="footer-links"><a href="https://linkedin.com/in/technical4you" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:kashifmpu@gmail.com">Email</a></div><small>© <span id="year">2026</span> Kashif Raza. All rights reserved.</small></div></footer>
+<script src="script.js"></script>
+</body>
+</html>
