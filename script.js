@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!hero) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+  if (getComputedStyle(hero).position === 'static') hero.style.position = 'relative';
   hero.style.overflow = 'hidden';
   hero.style.isolation = 'isolate';
 
