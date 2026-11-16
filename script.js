@@ -188,3 +188,70 @@ document.addEventListener('DOMContentLoaded', () => {
   resize();
   loop();
 });
+
+/* ======================================
+   LIVE SAP CAREER EXPERIENCE COUNTER + GRAPH MARKER
+   Career start: 02 November 2023
+====================================== */
+function updateCareerExperience() {
+  const start = new Date(2023, 10, 2);
+  const graphEnd = new Date(2028, 0, 1);
+  const now = new Date();
+
+  // Years / months / days since the start date
+  if (now >= start) {
+    let years = now.getFullYear() - start.getFullYear();
+    let months = now.getMonth() - start.getMonth();
+    let days = now.getDate() - start.getDate();
+
+    if (days < 0) {
+      months--;
+      days += new Date(now.getFullYear(), now.getMonth(), 0).getDate(); // days in previous month
+    }
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    const y = document.getElementById('careerYears');
+    const m = document.getElementById('careerMonths');
+    const d = document.getElementById('careerDays');
+    if (y) y.textContent = years;
+    if (m) m.textContent = months;
+    if (d) d.textContent = days;
+  }
+
+  // Move the marker along the graph line according to today's date
+  const path = document.getElementById('careerGrowthPath');
+  const marker = document.getElementById('careerNowPoint');
+  if (!path || !marker) return;
+
+  const totalLength = path.getTotalLength();
+  if (!totalLength) return; // tab hidden; it will run again when the tab opens
+
+  const progress = Math.max(0, Math.min(1, (now - start) / (graphEnd - start)));
+  const X_START = 35, X_END = 490;               // graph start and end on the x-axis
+  const targetX = X_START + progress * (X_END - X_START);
+
+  // Find the point on the line that matches the date position
+  let low = 0, high = totalLength;
+  for (let i = 0; i < 24; i++) {
+    const mid = (low + high) / 2;
+    if (path.getPointAtLength(mid).x < targetX) low = mid; else high = mid;
+  }
+  const point = path.getPointAtLength(high);
+  marker.setAttribute('cx', point.x);
+  marker.setAttribute('cy', point.y);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateCareerExperience();
+  setInterval(updateCareerExperience, 60000);
+
+  // Recalculate when the Experience tab is opened
+  document.addEventListener('click', e => {
+    if (e.target.closest('.tab-btn, .text-link, .btn')) {
+      setTimeout(updateCareerExperience, 80);
+    }
+  });
+});
