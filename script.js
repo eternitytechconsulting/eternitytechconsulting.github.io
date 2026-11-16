@@ -9,6 +9,8 @@ function showPage(id) {
     if (active) button.setAttribute('aria-current', 'page');
     else button.removeAttribute('aria-current');
   });
+  // Save the current section in the URL so a refresh keeps it
+  if (location.hash !== '#' + id) history.replaceState(null, '', '#' + id);
   closeMenu();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -21,6 +23,7 @@ function toggleMenu() {
   button.setAttribute('aria-expanded', String(isOpen));
   button.textContent = isOpen ? '×' : '☰';
 }
+
 function closeMenu() {
   const nav = document.getElementById('mainNav');
   const button = document.querySelector('.menu-toggle');
@@ -57,7 +60,11 @@ function updateCountdown() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  showPage('home');
+  // Open the section named in the URL (for example #sop), or Home if there is none
+  const fromUrl = location.hash.slice(1);
+  const startPage = document.getElementById(fromUrl)?.classList.contains('page') ? fromUrl : 'home';
+  showPage(startPage);
+
   updateCountdown();
   window.setInterval(updateCountdown, 1000);
   const year = document.getElementById('year');
