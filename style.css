@@ -70,3 +70,161 @@ footer{background:#0e1b30;color:#a9b9cb}.footer-inner{max-width:1200px;margin:au
 @media (max-width: 760px) {
   .brands-track img.brand-logo { height: 52px !important; width: 120px !important; }
 }
+
+
+
+/* =====================================================
+   EXPERIENCE TAB
+===================================================== */
+
+/* Brighter soft blue-white background */
+#experience.show {
+  position: relative;
+  padding: 4px 30px 30px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 10% 0%, #dcf0fc 0, transparent 38%),
+    radial-gradient(circle at 95% 15%, #e6f5ff 0, transparent 34%),
+    radial-gradient(circle at 60% 100%, #eaf7fb 0, transparent 40%),
+    linear-gradient(160deg, #fbfdff, #eef6fc 55%, #f9fcff);
+  box-shadow: inset 0 0 0 1px #e1edf6;
+}
+
+/* Two columns: timeline left, growth card right */
+.experience-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: 38px;
+  align-items: start;
+  margin: 10px 0 30px;
+}
+.experience-layout .timeline { max-width: none; margin: 6px 0 0 9px; }
+
+/* Timeline dots float up and down */
+.timeline-item::before { animation: timelineFloat 2.5s ease-in-out infinite; }
+.timeline-item:nth-child(2)::before { animation-delay: .5s; }
+.timeline-item:nth-child(3)::before { animation-delay: 1s; }
+@keyframes timelineFloat {
+  0%, 100% { transform: translateY(0); box-shadow: 0 0 0 0 #49b5d400; }
+  50%      { transform: translateY(-7px); box-shadow: 0 0 0 7px #49b5d422; }
+}
+
+/* Career growth card (sticky on desktop, no offset bug) */
+.career-growth {
+  position: sticky;
+  top: 90px;
+  align-self: start;
+  padding: 25px;
+  border: 1px solid #dce8f1;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #ffffffee, #f3f9ffee);
+  box-shadow: 0 12px 35px #142b4c12;
+  overflow: hidden;
+}
+.growth-heading h2 { font: 800 25px Manrope, sans-serif; color: var(--navy); margin: 7px 0; }
+.growth-heading p  { font-size: 12px; color: var(--muted); }
+
+/* Live counter */
+.career-counter {
+  margin-top: 22px; padding: 17px;
+  border: 1px solid #dceaf3; border-radius: 12px;
+  background: #ffffffd9;
+}
+.counter-heading {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 9px; font-weight: 800; letter-spacing: .13em; color: #52718c;
+}
+.live-indicator {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #21b77a; box-shadow: 0 0 0 4px #21b77a20;
+  animation: livePulse 1.8s infinite;
+}
+@keyframes livePulse { 50% { box-shadow: 0 0 0 7px #21b77a08; } }
+.counter-values { display: flex; align-items: center; justify-content: space-around; gap: 7px; margin-top: 15px; }
+.counter-unit { display: flex; flex-direction: column; align-items: center; flex: 1; }
+.counter-unit strong {
+  font: 800 clamp(25px, 3vw, 35px) Manrope, sans-serif;
+  color: #1769aa; font-variant-numeric: tabular-nums;
+}
+.counter-unit span { margin-top: 3px; font-size: 8px; font-weight: 800; letter-spacing: .14em; color: #8193a6; }
+.counter-separator { font-size: 22px; color: #b8c9d8; padding-bottom: 12px; }
+.counter-caption { text-align: center; margin-top: 12px; color: #7c8ea2; font-size: 10px; }
+
+/* Graph */
+.growth-chart { margin-top: 25px; }
+.growth-label { font-size: 9px; font-weight: 800; letter-spacing: .14em; color: #8293a7; margin-bottom: 8px; }
+.growth-visual { position: relative; }
+.growth-illustration {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  opacity: .12; pointer-events: none; z-index: 0;
+}
+.growth-graph { position: relative; z-index: 1; display: block; width: 100%; overflow: visible; }
+
+.growth-grid path { fill: none; stroke: #dce7ef; stroke-width: 1; stroke-dasharray: 4 6; }
+
+.growth-area { fill: url(#careerAreaGradient); opacity: 0; animation: careerAreaReveal 2s ease forwards 1s; }
+@keyframes careerAreaReveal { to { opacity: 1; } }
+
+.growth-line {
+  fill: none; stroke: url(#careerLineGradient); stroke-width: 4;
+  stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 1000; stroke-dashoffset: 1000;
+  animation: careerLineDraw 3s ease forwards .3s;
+}
+@keyframes careerLineDraw { to { stroke-dashoffset: 0; } }
+
+.growth-points circle {
+  fill: #fff; stroke: #2386b5; stroke-width: 3;
+  transform-box: fill-box; transform-origin: center;
+  animation: careerPointPulse 2s ease-in-out infinite;
+}
+.growth-points circle:nth-child(2) { animation-delay: .3s; }
+.growth-points circle:nth-child(3) { animation-delay: .6s; }
+.growth-points circle:nth-child(4) { animation-delay: .9s; }
+.growth-points circle:nth-child(5) { animation-delay: 1.2s; }
+@keyframes careerPointPulse { 50% { transform: scale(1.35); } }
+
+/* Live date marker */
+.career-now-point {
+  fill: #fff; stroke: #e4a52f; stroke-width: 4;
+  filter: drop-shadow(0 0 5px #e4a52f80);
+  animation: currentPointPulse 1.8s ease-in-out infinite;
+}
+@keyframes currentPointPulse { 50% { r: 12; } }
+
+.growth-axis text { font: 700 10px "DM Sans", sans-serif; fill: #8494a7; text-anchor: middle; }
+
+.growth-footer {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+  padding-top: 15px; border-top: 1px solid #e4ebf2;
+}
+.growth-footer div { display: flex; flex-direction: column; gap: 3px; }
+.growth-footer b { color: #247eae; font: 800 13px Manrope, sans-serif; }
+.growth-footer span { color: #718196; font-size: 10px; }
+.growth-disclaimer { font-size: 9px; color: #99a7b5; margin-top: 15px; }
+
+/* Mobile: timeline on top, growth card below */
+@media (max-width: 900px) {
+  #experience.show { padding: 4px 18px 22px; }
+  .experience-layout { grid-template-columns: 1fr; gap: 20px; }
+  .career-growth { position: relative; top: auto; }
+}
+@media (max-width: 480px) {
+  #experience.show { padding: 2px 12px 18px; border-radius: 16px; }
+  .career-growth { padding: 16px; }
+  .growth-heading h2 { font-size: 21px; }
+  .counter-values { gap: 3px; }
+  .counter-unit strong { font-size: 25px; }
+  .counter-unit span { font-size: 7px; }
+  .growth-footer { gap: 5px; }
+  .growth-footer span { font-size: 9px; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .timeline-item::before, .live-indicator, .growth-line, .growth-area,
+  .growth-points circle, .career-now-point { animation: none; }
+  .growth-line { stroke-dashoffset: 0; }
+  .growth-area { opacity: 1; }
+}
+
