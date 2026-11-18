@@ -255,3 +255,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+
+/* ======================================
+   SAP LIBRARY SEARCH + CATEGORY FILTER
+====================================== */
+
+let currentLibraryCategory = 'all';
+
+function filterLibrary() {
+  const search = document.getElementById('librarySearch');
+  const cards = document.querySelectorAll('.library-document-card');
+  const noResults = document.getElementById('libraryNoResults');
+
+  if (!search) return;
+
+  const query = search.value.toLowerCase().trim();
+  let visibleCount = 0;
+
+  cards.forEach(card => {
+    const categories = (card.dataset.category || '').split(' ');
+    const text = (card.dataset.search || '') + ' ' + card.innerText;
+    const matchesSearch = text.toLowerCase().includes(query);
+    const matchesCategory =
+      currentLibraryCategory === 'all' ||
+      categories.includes(currentLibraryCategory);
+
+    const visible = matchesSearch && matchesCategory;
+    card.style.display = visible ? 'flex' : 'none';
+
+    if (visible) visibleCount++;
+  });
+
+  if (noResults) {
+    noResults.hidden = visibleCount !== 0;
+  }
+}
+
+function setLibraryFilter(category, button) {
+  currentLibraryCategory = category;
+
+  document.querySelectorAll('.library-filter').forEach(filter => {
+    filter.classList.remove('active');
+  });
+
+  if (button) button.classList.add('active');
+
+  filterLibrary();
+}
