@@ -304,3 +304,46 @@ function setLibraryFilter(category, button) {
 
   filterLibrary();
 }
+
+
+
+
+/* ==========================================
+   PORTFOLIO — INTERACTIVE CATEGORY FILTERS
+========================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const portfolio = document.getElementById('portfolio');
+  if (!portfolio) return;
+
+  const filters = portfolio.querySelectorAll('.portfolio-filter');
+  const cards = portfolio.querySelectorAll('.portfolio-project-card');
+  const noResults = portfolio.querySelector('.portfolio-no-results');
+
+  filters.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.dataset.filter;
+      let visible = 0;
+
+      filters.forEach(filter => {
+        const active = filter === button;
+        filter.classList.toggle('active', active);
+        filter.setAttribute('aria-pressed', String(active));
+      });
+
+      cards.forEach(card => {
+        const matches =
+          category === 'all' ||
+          card.dataset.category === category;
+
+        card.hidden = !matches;
+
+        if (matches) visible++;
+      });
+
+      if (noResults) {
+        noResults.hidden = visible > 0;
+      }
+    });
+  });
+});
