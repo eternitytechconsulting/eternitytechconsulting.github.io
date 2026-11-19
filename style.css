@@ -1525,3 +1525,726 @@ footer{background:#0e1b30;color:#a9b9cb}.footer-inner{max-width:1200px;margin:au
     transition-duration: .01ms !important;
   }
 }
+
+
+
+/* =====================================================
+   ETERNITY TECH CONSULTING — FUTURISTIC PORTFOLIO
+===================================================== */
+
+#portfolio {
+  position: relative;
+  overflow: hidden;
+}
+
+#portfolio .portfolio-hero {
+  min-height: 360px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 65px 7%;
+  border-radius: 24px;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 82% 48%, rgba(0, 190, 255, .19), transparent 34%),
+    radial-gradient(ellipse at 20% 100%, rgba(39, 91, 190, .23), transparent 45%),
+    linear-gradient(120deg, #071326, #0b1d38 55%, #101d38);
+  color: #fff;
+  margin-bottom: 55px;
+}
+
+.portfolio-grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .17;
+  background-image:
+    linear-gradient(rgba(93, 176, 255, .16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(93, 176, 255, .16) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(90deg, black, transparent);
+}
+
+.portfolio-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 610px;
+}
+
+.portfolio-eyebrow,
+.portfolio-section-label {
+  color: #54caff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.3px;
+}
+
+.portfolio-live-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+  background: #43e5bb;
+  box-shadow: 0 0 12px #43e5bb;
+  animation: portfolioPulse 2s infinite;
+}
+
+@keyframes portfolioPulse {
+  50% { opacity: .4; box-shadow: 0 0 22px #43e5bb; }
+}
+
+#portfolio .portfolio-hero h1 {
+  color: #fff;
+  font-size: clamp(38px, 5.5vw, 66px);
+  line-height: 1.08;
+  letter-spacing: -2.5px;
+  margin: 22px 0 18px;
+}
+
+#portfolio .portfolio-hero h1 span {
+  color: transparent;
+  background: linear-gradient(90deg, #48c8ff, #8b9dff);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+#portfolio .portfolio-hero-content > p {
+  max-width: 540px;
+  color: #b5c6dc;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.portfolio-hero-tags,
+.portfolio-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.portfolio-hero-tags {
+  margin-top: 25px;
+}
+
+.portfolio-hero-tags span {
+  border: 1px solid rgba(107, 195, 255, .24);
+  background: rgba(74, 158, 235, .09);
+  color: #c5e8ff;
+  padding: 9px 13px;
+  border-radius: 30px;
+  font-size: 11px;
+}
+
+/* Orbital visual */
+
+.portfolio-orbit {
+  position: absolute;
+  right: 9%;
+  top: 50%;
+  width: 250px;
+  height: 250px;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+}
+
+.portfolio-orbit-ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(83, 191, 255, .32);
+  border-radius: 50%;
+  box-shadow: 0 0 22px rgba(36, 160, 255, .08);
+}
+
+.ring-one { transform: scale(1); }
+.ring-two { transform: scale(.76) rotateX(65deg); }
+.ring-three { transform: scale(.9) rotateY(65deg); }
+
+.portfolio-orbit-core {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 26px;
+  font-weight: 900;
+  background: radial-gradient(circle at 35% 30%, #1a91d9, #071b37 70%);
+  box-shadow: 0 0 40px rgba(27, 168, 255, .48),
+              inset 0 0 22px rgba(92, 211, 255, .4);
+}
+
+.orbit-node {
+  position: absolute;
+  z-index: 2;
+  padding: 7px 11px;
+  border-radius: 20px;
+  color: #b9eaff;
+  background: #102c4c;
+  border: 1px solid rgba(84, 193, 255, .45);
+  font-size: 10px;
+  font-weight: 800;
+  box-shadow: 0 0 15px rgba(29, 154, 255, .18);
+}
+
+.node-one { top: 12px; left: 80px; }
+.node-two { right: -12px; top: 112px; }
+.node-three { bottom: 12px; left: 77px; }
+.node-four { left: -10px; top: 112px; }
+
+/* Section heading */
+
+.portfolio-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.portfolio-section-heading h2,
+.portfolio-brands-heading h2 {
+  color: #14233b;
+  font-size: clamp(26px, 4vw, 38px);
+  margin: 9px 0;
+  letter-spacing: -1.2px;
+}
+
+.portfolio-section-heading h2 span,
+.portfolio-brands-heading h2 span {
+  color: #1688cf;
+}
+
+.portfolio-section-heading p,
+.portfolio-brands-heading p {
+  color: #718096;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.portfolio-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 23px;
+  border-radius: 15px;
+  background: #edf7ff;
+  border: 1px solid #d9edff;
+}
+
+.portfolio-count strong {
+  color: #1688cf;
+  font-size: 29px;
+}
+
+.portfolio-count span {
+  color: #718096;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Filter buttons */
+
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 25px 0;
+}
+
+.portfolio-filter {
+  padding: 10px 17px;
+  border: 1px solid #dbe5f0;
+  background: #fff;
+  color: #53647a;
+  border-radius: 30px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.portfolio-filter:hover,
+.portfolio-filter.active {
+  color: white;
+  border-color: #137bc1;
+  background: linear-gradient(110deg, #1269a8, #168fce);
+  box-shadow: 0 6px 20px rgba(20, 125, 190, .2);
+}
+
+/* Project cards */
+
+.portfolio-project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.portfolio-project-card {
+  min-width: 0;
+  position: relative;
+  padding: 27px;
+  border: 1px solid #e0eaf3;
+  border-radius: 19px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(42, 164, 235, .09), transparent 34%),
+    linear-gradient(145deg, #fff, #f8fbff);
+  box-shadow: 0 9px 28px rgba(19, 48, 80, .055);
+  transition: transform .3s ease, box-shadow .3s ease,
+              border-color .3s ease;
+  overflow: hidden;
+}
+
+.portfolio-project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #178bd2, #55d9ef, #8b8bff);
+  opacity: .75;
+}
+
+.portfolio-project-card:hover {
+  transform: translateY(-7px);
+  border-color: #91d7ff;
+  box-shadow: 0 19px 42px rgba(20, 107, 170, .14);
+}
+
+.portfolio-card-top,
+.portfolio-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.portfolio-number {
+  color: #8b9bad;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.portfolio-status {
+  color: #087bb9;
+  background: #e6f5ff;
+  border: 1px solid #cdeaff;
+  padding: 6px 10px;
+  border-radius: 30px;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .7px;
+}
+
+.portfolio-icon {
+  width: 49px;
+  height: 49px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  margin: 24px 0 17px;
+  color: #fff;
+  font-size: 27px;
+  background: linear-gradient(140deg, #0879bd, #27b5d8);
+  box-shadow: 0 8px 20px rgba(20, 137, 202, .24);
+}
+
+.portfolio-project-type {
+  color: #1689c7;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.6px;
+}
+
+.portfolio-project-card h3 {
+  color: #172c48;
+  font-size: 21px;
+  line-height: 1.35;
+  margin: 9px 0 12px;
+}
+
+.portfolio-project-card > p {
+  color: #65758b;
+  font-size: 13px;
+  line-height: 1.8;
+  min-height: 70px;
+}
+
+.portfolio-tech-tags {
+  margin: 20px 0;
+}
+
+.portfolio-tech-tags span {
+  background: #eef5fb;
+  color: #4d6680;
+  border: 1px solid #dce8f2;
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.portfolio-card-footer {
+  padding-top: 16px;
+  border-top: 1px solid #e7edf4;
+}
+
+.portfolio-card-footer > span:first-child {
+  color: #91a0b0;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.portfolio-arrow {
+  color: #1689cf;
+  font-size: 22px;
+  transition: transform .25s ease;
+}
+
+.portfolio-project-card:hover .portfolio-arrow {
+  transform: translate(4px, -4px);
+}
+
+.portfolio-project-card[hidden] {
+  display: none !important;
+}
+
+.portfolio-no-results {
+  padding: 25px;
+  text-align: center;
+  color: #718096;
+}
+
+/* Brand showcase */
+
+.portfolio-brands {
+  margin-top: 65px;
+  padding: 34px 25px;
+  border-radius: 22px;
+  background: linear-gradient(140deg, #09172d, #102a48);
+  overflow: hidden;
+}
+
+.portfolio-brands-heading {
+  margin-bottom: 25px;
+}
+
+.portfolio-brands-heading h2 {
+  color: #fff;
+}
+
+.portfolio-brands-heading p {
+  color: #afc1d5;
+  max-width: 600px;
+}
+
+.portfolio-brand-marquee {
+  overflow: hidden;
+  width: 100%;
+  border: 1px solid rgba(139, 199, 255, .19);
+  border-radius: 13px;
+  padding: 18px 0;
+  background: rgba(255, 255, 255, .045);
+}
+
+.portfolio-brand-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 18px;
+  animation: portfolioBrandsScroll 32s linear infinite;
+}
+
+.portfolio-brand-track img {
+  width: 125px;
+  height: 66px;
+  padding: 10px;
+  object-fit: contain;
+  border-radius: 9px;
+  background: white;
+  filter: grayscale(35%);
+  transition: .3s ease;
+}
+
+.portfolio-brand-track img:hover {
+  filter: grayscale(0);
+  transform: scale(1.06);
+}
+
+@keyframes portfolioBrandsScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.portfolio-brand-marquee:hover .portfolio-brand-track {
+  animation-play-state: paused;
+}
+
+/* Disclaimer */
+
+.portfolio-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 19px 22px;
+  margin-top: 24px;
+  border: 1px solid #dbeaf6;
+  border-radius: 12px;
+  background: #f1f8fe;
+}
+
+.portfolio-disclaimer > span {
+  color: #1689c7;
+  font-size: 19px;
+}
+
+.portfolio-disclaimer p {
+  color: #66798e;
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .portfolio-orbit {
+    right: 3%;
+    opacity: .5;
+    transform: translateY(-50%) scale(.78);
+  }
+
+  .portfolio-hero-content {
+    max-width: 65%;
+  }
+}
+
+@media (max-width: 650px) {
+  #portfolio .portfolio-hero {
+    min-height: 450px;
+    padding: 38px 24px;
+    align-items: flex-start;
+  }
+
+  .portfolio-hero-content {
+    max-width: 100%;
+  }
+
+  .portfolio-orbit {
+    top: auto;
+    bottom: -83px;
+    right: 50%;
+    transform: translateX(50%) scale(.7);
+    opacity: .55;
+  }
+
+  .portfolio-project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-section-heading {
+    align-items: flex-start;
+  }
+
+  .portfolio-count {
+    padding: 10px;
+  }
+
+  .portfolio-count strong {
+    font-size: 22px;
+  }
+
+  .portfolio-project-card > p {
+    min-height: auto;
+  }
+
+  .portfolio-brands {
+    padding: 26px 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-live-dot,
+  .portfolio-brand-track {
+    animation: none !important;
+  }
+
+  .portfolio-project-card,
+  .portfolio-filter,
+  .portfolio-arrow {
+    transition: none !important;
+  }
+}
+
+
+/* ==========================================
+   PORTFOLIO - ROTATING SAP ORBIT
+========================================== */
+
+.portfolio-orbit {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-orbit-ring {
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(54, 166, 230, 0.35);
+  border-radius: 50%;
+}
+
+.portfolio-orbit-ring.ring-one {
+  animation: portfolioRingRotate 18s linear infinite;
+}
+
+.portfolio-orbit-ring.ring-two {
+  transform: scaleX(.55);
+}
+
+.portfolio-orbit-ring.ring-three {
+  transform: rotate(90deg) scaleX(.55);
+}
+
+.portfolio-orbit-path {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(42, 153, 220, .45);
+  border-radius: 50%;
+  animation: portfolioOrbitRotate 12s linear infinite;
+}
+
+.portfolio-orbit-core {
+  position: relative;
+  z-index: 5;
+  width: 82px;
+  height: 82px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 23px;
+  font-weight: 800;
+  background: radial-gradient(circle at 35% 30%, #36b8ff, #07518d 75%);
+  box-shadow: 0 0 35px rgba(22, 139, 220, .65);
+}
+
+.portfolio-orbit-path .orbit-node {
+  position: absolute;
+  z-index: 6;
+  padding: 8px 13px;
+  border: 1px solid #258bc9;
+  border-radius: 25px;
+  color: #b9eaff;
+  background: #102d4b;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  animation: portfolioNodeCounterRotate 12s linear infinite;
+}
+
+.portfolio-orbit-path .node-one {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.portfolio-orbit-path .node-two {
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+}
+
+.portfolio-orbit-path .node-three {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.portfolio-orbit-path .node-four {
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+}
+
+@keyframes portfolioOrbitRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes portfolioNodeCounterRotate {
+  from { rotate: 0deg; }
+  to { rotate: -360deg; }
+}
+
+@keyframes portfolioRingRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-orbit-path,
+  .portfolio-orbit-ring.ring-one,
+  .portfolio-orbit-path .orbit-node {
+    animation: none;
+  }
+}
+
+/* FIX: Move SAP orbit to the right side of Portfolio hero */
+
+.portfolio-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.portfolio-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 58%;
+  max-width: 620px;
+}
+
+.portfolio-orbit {
+  position: absolute;
+  right: 35px;
+  top: 50%;
+  width: 260px;
+  height: 260px;
+  margin: 0;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+@media (max-width: 768px) {
+  .portfolio-hero {
+    flex-direction: column;
+    padding-bottom: 300px;
+  }
+
+  .portfolio-hero-content {
+    width: 100%;
+  }
+
+  .portfolio-orbit {
+    right: 50%;
+    top: auto;
+    bottom: 15px;
+    transform: translateX(50%) scale(.85);
+    transform-origin: bottom center;
+  }
+}
