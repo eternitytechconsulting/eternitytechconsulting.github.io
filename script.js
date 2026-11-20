@@ -347,3 +347,87 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+
+
+/* ==========================================
+   PREMIUM TECHNICAL VAULT
+   Search, filters and document accordion
+========================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const vault = document.querySelector('.premium-vault');
+  if (!vault) return;
+
+  const searchInput = vault.querySelector('#pvSearch');
+  const filters = vault.querySelectorAll('.pv-filter');
+  const cards = vault.querySelectorAll('.pv-card');
+  const emptyMessage = vault.querySelector('#pvEmpty');
+
+  let activeFilter = 'all';
+
+  function filterDocuments() {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const category = card.dataset.category || '';
+      const searchableText = (
+        card.dataset.search + ' ' + card.textContent
+      ).toLowerCase();
+
+      const matchesCategory =
+        activeFilter === 'all' || category === activeFilter;
+
+      const matchesSearch = searchableText.includes(searchTerm);
+      const visible = matchesCategory && matchesSearch;
+
+      card.hidden = !visible;
+
+      if (visible) visibleCount++;
+    });
+
+    emptyMessage.hidden = visibleCount !== 0;
+  }
+
+  filters.forEach(button => {
+    button.addEventListener('click', () => {
+      activeFilter = button.dataset.filter;
+
+      filters.forEach(filter => {
+        const isActive = filter === button;
+        filter.classList.toggle('active', isActive);
+        filter.setAttribute('aria-pressed', String(isActive));
+      });
+
+      filterDocuments();
+    });
+  });
+
+  searchInput.addEventListener('input', filterDocuments);
+
+  // Expand/collapse document previews
+  vault.querySelectorAll('.pv-details-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const detailsId = button.getAttribute('aria-controls');
+      const details = vault.querySelector('#' + detailsId);
+
+      if (!details) return;
+
+      const isExpanded =
+        button.getAttribute('aria-expanded') === 'true';
+
+      button.setAttribute('aria-expanded', String(!isExpanded));
+      details.hidden = isExpanded;
+
+      const label = button.querySelector('span');
+      if (label) label.textContent = isExpanded ? '+' : '−';
+
+      button.firstChild.textContent =
+        isExpanded ? 'Explore document ' : 'Hide document details ';
+    });
+  });
+
+  filterDocuments();
+});
